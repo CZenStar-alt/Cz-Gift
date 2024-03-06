@@ -1,16 +1,21 @@
-fx_version 'cerulean'
-game 'gta5'
+name "Cz-GiftBox"
+author "Czen Star"
+version "1.0.0"
+description "Gift box script by Czen Star"
+fx_version "cerulean"
+game "gta5"
 
-author 'Czen Star'
-description 'Cz-Gift script for QB-Core'
-version '1.0'
+shared_script {
+    '@qb-core/shared/locale.lua',
+    'locales/*.lua',
+    'config.lua'
+}
 
-shared_script 'Config.lua'
-client_script 'Client.lua'
-server_script 'Server.lua'
+server_script 'server.lua'
+client_script 'client.lua'
 
-dependencies {
-    'qb-core',
-    'qb-target',
-    'ps-inventory'
+lua54 'yes'
+
+escrow_ignore{
+    'config.lua',
 }
